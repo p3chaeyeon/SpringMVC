@@ -1,0 +1,15 @@
+// SpringProject/src/main/java/com/controller/SpringProjectMainController.java
+package com.controller.SpringProject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MainController {
+   
+   @RequestMapping(value="/")
+   public String index() {
+      return "/index";
+   }
+}
+

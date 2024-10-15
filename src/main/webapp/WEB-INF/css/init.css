@@ -1,0 +1,12 @@
+/* SpringProject/src/main/webapp/WEB-INF/css/init.css */
+@charset "UTF-8";
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}

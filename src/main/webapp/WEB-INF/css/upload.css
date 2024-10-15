@@ -1,0 +1,160 @@
+/* SpringProject/src/main/webapp/WEB-INF/css/upload.css */
+@charset "UTF-8";
+@import url("init.css");
+/* 
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+} */
+
+html, body {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+#header {
+	margin: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
+#header a {
+    display: flex;       
+    align-items: center; 
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    gap: 10px; 
+}
+
+
+#container {
+    margin: 30px auto;
+    width: 700px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.2);
+}
+
+#container .formTitle {
+	border-radius: 20px 20px 0 0;
+	background: #03C75A; /* #8ADB9F; */
+	color: white;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+	font-weight: 700;
+	margin: 0;
+	padding: 10px 20px;
+}
+
+form {
+	margin: 0 20px;
+}
+
+table {
+	width: 500px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+td[colspan="2"] {
+    border-bottom: none; /* 하단 테두리 제거 */
+    height: 70px;
+}
+
+.label {
+    width: 30%;
+}
+
+.input {
+    width: 70%;
+    text-align: left;
+}
+
+input[type="text"] {
+    width: 300px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    border : 1px solid #ddd;
+}
+
+textarea {
+	width: 300px;
+	resize: vertical;
+}
+
+#showImg {
+    width: 300px;
+    height: 300px;
+    object-fit: contain; /* 이미지 비율을 유지하면서 틀에 맞춤 */
+}
+
+#fileInput {
+	width: 300px;
+	text-align: center;
+}
+
+.fileIcon, #fileNotice {
+	display: inline;
+}
+
+.fileIcon:hover, #fileNotice:hover {
+	cursor: pointer;
+}
+
+#fileinput > .fileIcon {
+	transform: scale(1.7);
+	padding: 5px;
+}
+
+#fileinput > #fileNotice {
+	padding: 5px;
+}
+
+#imageOriginalFileName {
+	margin-top: 5spx;
+}
+
+button {
+    width: 130px;
+    height: 40px;
+    padding: 3px 10px;
+    background: white;
+    border: 1px solid #ddd;
+    color: #5A5A5A;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input button {
+	height: 30px;
+}
+
+button:hover {
+    background: #5A5A5A;
+    color: white;
+}
+
+#nameDiv, #pwdDiv {
+   padding: 5px 0 0 3px;
+   color: red;
+   font-size: 8pt;
+}

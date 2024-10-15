@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SpringProject/src/main/resources/mapper/userUploadMapper.xml -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="user.dao.UserUploadDAO">
+	<!-- sql 문을 실행할 때, 넘어오는 파라키터 타입이 list 일 경우; forEach 태그의 collection 속성 사용 (list or collection) -->
+	<insert id="upload" parameterType="list">
+	    insert into userUpload(imageName, imageContent, imageFileName, imageOriginalFileName)
+	    values 
+	    <foreach item="dto" collection="list" separator=",">
+	        (#{dto.imageName}, #{dto.imageContent}, #{dto.imageFileName}, #{dto.imageOriginalFileName})
+	    </foreach>
+	</insert>
+
+	
+	<select id="getUploadList" resultType="userUploadDTO">
+		SELECT * FROM userUpload ORDER BY seq DESC
+	</select>  
+	
+	<select id="getUploadDTO" parameterType="String" resultType="userUploadDTO">
+		SELECT * FROM userUpload WHERE seq = #{seq}
+	</select> 
+	
+	<select id="getImageFileName" parameterType="int" resultType="String">
+		SELECT imageFileName FROM userUpload WHERE seq = #{seq}
+	</select> 
+	 	
+	<update id="uploadUpdate" parameterType="userUploadDTO">
+		UPDATE userupload SET imageName = #{imageName}, 
+							  imageContent = #{imageContent},
+							  imageFileName = #{imageFileName},
+							  imageOriginalFileName = #{imageOriginalFileName}
+		WHERE seq = #{seq}
+	</update> 
+
+	<delete id="uploadDelete" parameterType="list">
+	    DELETE FROM userupload WHERE imageFileName IN 
+	    <foreach item="imageFileName" collection="list" open="(" separator="," close=")">
+	        #{imageFileName}
+	    </foreach>
+	</delete>	
+	
+	<!-- 
+	<delete id="deleteImage" parameterType="list">
+	    DELETE FROM movie_tb WHERE mcode IN
+	    <foreach item="mcode" collection="mcodes" open="(" separator="," close=")">
+	        #{mcode}
+	    </foreach>
+	</delete>
+	 -->
+</mapper>
